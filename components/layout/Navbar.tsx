@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Button } from '../ui/button'
 import SearchInput from '../shared/SearchInput'
+import { ModeToggle } from '../shared/ModeToggle'
+import NavMenu from '../shared/NavMenu'
 
 const Navbar = () => {
   const router = useRouter()
@@ -23,7 +25,10 @@ const Navbar = () => {
           </div>
           <SearchInput />
           <div className="flex gap-3 items-center">
-            <div>theme</div>
+            <div className="flex items-center">
+              <ModeToggle />
+              <NavMenu />
+            </div>
             {userId ? (
               <UserButton afterSignOutUrl="/" />
             ) : (
